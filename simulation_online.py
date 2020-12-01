@@ -47,11 +47,11 @@ def send_reward(variable: str, value: float, user_id: str, mooclet: int, version
 	return open_url_to_dict(url, data, 'POST', header)
 
 if __name__ == "__main__":
-	data_path = './data/q5easy1ans_mooclet.csv'
-	past_mooclet = {'mooclet': 145, 'versions': [5197, 5198, 5199], 'outcome_variable_name': 'q5easy1ans'}
-	sim_mooclet = {'mooclet': 153, 'versions': [5215, 5216, 5217], 'outcome_variable_name': 'finalstr7_replica_rwd'}
+	data_path = './data/fake.csv' # The path to your raw data csv
+	past_mooclet = {'mooclet': 145, 'versions': [5197, 5198, 5199], 'outcome_variable_name': 'fake_outcome'} # Replace with your mooclet you took the csv from
+	sim_mooclet = {'mooclet': 153, 'versions': [5215, 5216, 5217], 'outcome_variable_name': 'fake_outcome_replica'} # Replace with your new mooclet you will run simulation on
 	mooclet_url = '[Replace with your mooclet url]' # The url of the root of mooclet. Don't add "/" at the end
-	version_mapping = {5197: 5215, 5198: 5216, 5199: 5217}
+	version_mapping = {5197: 5215, 5198: 5216, 5199: 5217} # The mapping of versions from past_mooclet to sim_mooclet
 	policy_id = 3 # id of your TS policy
 	max_rating = 1 # The maximum value of the outcome variable
 	token = '[Replace with your token]' # Token to access your mooclet
